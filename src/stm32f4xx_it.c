@@ -10,28 +10,13 @@
   ******************************************************************************
   */ 
 
-#include "stm32f4xx_it.h"
+//#include "stm32f4xx_it.h"
 #include "stm32f4_discovery.h"
 #include "repeat.h"
 
-//#include "roms/tetris_rom.h"
-//#include "roms/drmario_rom.h"
-//#include "roms/jml_rom.h"
-//#include "roms/zelda_rom.h"
-//#include "roms/fubu_rom.h"
-//#include "roms/dmgp_rom.h"
-//#include "roms/zelda_f_rom.h"
-//#include "roms/20y_rom.h"
-//#include "roms/gejmboj_rom.h"
-//#include "roms/oh_rom.h"
-//#include "roms/mcmrder_rom.h"
-//#include "roms/cpu_test_rom.h"
-//#include "roms/gemgem_rom.h"
-//#include "roms/organizer_rom.h"
-//#include "roms/organizer_sav.h"
-//#include "roms/demonblood_rom.h"
-#include "roms/joul_rom.h"
-#include "dhole2_logo.h"
+#include "../roms/rom.h"
+// uncomment next line to include custom logo
+//#include "../logo/logo.h"
 
 
 /* 
@@ -105,13 +90,16 @@ inline uint8_t mbc1_read(uint16_t addr) {
 		if (no_show_logo) {
 			/* Custom logo disabled */
 			return rom_gb[addr];
-		} else {
+		} 
+		#ifdef DHOLE2_LOGO_H_
+		else {
 			/* Custom logo enabled, only during first read at boot */
 			if (addr == 0x133) {
 				no_show_logo = 1;
 			}
-			return logo_bin[addr - 0x104];
+			return logo_bin[addr - 0x104];	
 		}
+		#endif
 	} else if (addr < 0x8000) {
 		/* 16KB ROM Bank 01-7F */
 		return rom_gb[addr + 0x4000 * (rom_bank - 1)];

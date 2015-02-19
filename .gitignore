@@ -1,0 +1,18 @@
+# don't add priavte notes
+todo.txt
+
+# don't add any ROM files
+roms/*.gb
+roms/rom.h
+
+# don't add any LOGO files
+logo/*.png
+logo/logo.bin
+
+# don't add linker file
+linker/stm32_flash.ld
+
+#don't add any compiled code
+*.bin
+*.elf
+*.hex
