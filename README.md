@@ -16,6 +16,16 @@ stm32f_GBCart
 12. cd ..
 13. make
 
+##How to program board (Linux):
+There's lots of ways to do this (just google it), but the way I prefer (from http://vedder.se/2012/07/get-started-with-stm32f4-on-ubuntu-linux/) is below (others may require additional steps because my system has many packages installed from previous prjects I've worked on):
+1. Install QStlink2 (https://github.com/fpoussin/qstlink2) from source or linked package
+2. run ```qstlink2'''
+3. connect your board to the PC
+4. click "Send..."
+5. open ~/Gameboy/stm32f_GBCart/gbcart.bin
+6. Confirm Yes
+
+
 Game Boy Cartridge emulation from a stm32f4 Development Board
 
 I wrote about this project in my blog:
