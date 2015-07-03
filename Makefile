@@ -1,5 +1,5 @@
 # Location of stsw-stm32068
-STM_COMMON = ../../STM32F4-Discovery_FW_V1.1.0
+STM_COMMON = ../STM32F4-Discovery_FW_V1.1.0
 
 # Tools used to compile our code
 CC = arm-none-eabi-gcc

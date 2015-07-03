@@ -1,6 +1,21 @@
 stm32f_GBCart
 =============
 
+##How to build project:
+1. mkdir Gameboy
+2. cd Gameboy
+3. git clone https://github.com/dwaq/stm32f_GBCart.git
+4. cd stm32f_GBCart
+5. Download STSW-STM32068 from http://www.st.com/web/en/catalog/tools/PF257904# and then cd to its directory
+6. unzip stsw-stm32068.zip -d ~/Gameboy/
+7. cd ~/Gameboy/stm32f_GBCart/linker
+8. ./get_and_modify_linker.sh
+9. move your Gameboy rom into ~/Gameboy/stm32f_GBCart/roms
+10. cd ~/Gameboy/stm32f_GBCart/roms
+11. ./create_rom.sh filename.gb
+12. cd ..
+13. make
+
 Game Boy Cartridge emulation from a stm32f4 Development Board
 
 I wrote about this project in my blog:

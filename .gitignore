@@ -1,5 +1,8 @@
-# don't add priavte notes
+# don't add private notes
 todo.txt
+
+# don't add open file
+README.md~
 
 # don't add any ROM files
 roms/*.gb
